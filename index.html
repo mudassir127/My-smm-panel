@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMM Panel — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="logo"><span>SMM</span> PANEL</div>
+    <nav>
+      <a class="active" href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="actions">
+      <button class="ghost" onclick="openModal('login')">Login</button>
+      <button class="primary" onclick="openModal('signup')">Sign Up</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="badge">✦ Trusted Social Media Services</div>
+        <h1>Boost Your <span>Social Media</span> Presence</h1>
+        <p>Manage legitimate social-media marketing services from one simple dashboard.</p>
+        <div class="buttons">
+          <button class="primary big" onclick="openModal('signup')">Get Started →</button>
+          <a class="ghost big" href="#services">View Services</a>
+        </div>
+        <div class="stats">
+          <div><b>10K+</b><small>Customers</small></div>
+          <div><b>500K+</b><small>Orders</small></div>
+          <div><b>100+</b><small>Services</small></div>
+          <div><b>99.9%</b><small>Uptime</small></div>
+        </div>
+      </div>
+      <div class="visual">
+        <div class="glow"></div>
+        <div class="phone">
+          <div class="phone-top"></div>
+          <div class="rocket">🚀</div>
+          <div class="phone-text">Grow smarter<br><strong>with SMM</strong></div>
+        </div>
+        <div class="social ig">◎</div>
+        <div class="social yt">▶</div>
+        <div class="social fb">f</div>
+        <div class="social tt">♪</div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="section-title">
+        <div><span class="eyebrow">OUR SERVICES</span><h2>Choose a service</h2></div>
+        <p>Start with the service you need and manage everything from your dashboard.</p>
+      </div>
+      <div class="cards">
+        <article><div class="icon igbg">◎</div><h3>Instagram Marketing</h3><p>Professional marketing services for eligible Instagram accounts.</p><button onclick="openModal('signup')">Get Started</button></article>
+        <article><div class="icon ttbg">♪</div><h3>TikTok Marketing</h3><p>Marketing options designed for creators and brands.</p><button onclick="openModal('signup')">Get Started</button></article>
+        <article><div class="icon fbbg">f</div><h3>Facebook Marketing</h3><p>Services for pages and campaigns with clear order tracking.</p><button onclick="openModal('signup')">Get Started</button></article>
+        <article><div class="icon ytbg">▶</div><h3>YouTube Marketing</h3><p>Organize promotional services and monitor your orders.</p><button onclick="openModal('signup')">Get Started</button></article>
+      </div>
+    </section>
+
+    <section id="how" class="how section">
+      <div class="section-title"><div><span class="eyebrow">HOW IT WORKS</span><h2>Simple in 3 steps</h2></div></div>
+      <div class="steps">
+        <div><strong>01</strong><h3>Create account</h3><p>Register and open your personal dashboard.</p></div>
+        <div><strong>02</strong><h3>Choose service</h3><p>Select an available social-media marketing service.</p></div>
+        <div><strong>03</strong><h3>Track your order</h3><p>View payment and order status from your account.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="logo"><span>SMM</span> PANEL</div>
+    <p>Social media marketing made simple.</p>
+  </footer>
+
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="close" onclick="closeModal()">×</button>
+      <h2 id="modalTitle">Welcome</h2>
+      <p id="modalText">This demo form will be connected to the real account system in the next stage.</p>
+      <input placeholder="Email address">
+      <input placeholder="Password" type="password">
+      <button class="primary full">Continue</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
