@@ -149,3 +149,10 @@ body {
   visibility: visible !important;
   opacity: 1 !important;
 }
+@media (max-width: 560px) {
+  .actions .ghost {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
