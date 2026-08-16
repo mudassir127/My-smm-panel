@@ -44,3 +44,285 @@
     letter-spacing: 1.5px !important;
   }
 }
+/* ===== RAJA SMM PREMIUM PANEL DESIGN ===== */
+
+:root {
+  --bg: #050817;
+  --bg2: #080d20;
+  --card: rgba(13, 19, 45, 0.78);
+  --border: rgba(130, 100, 255, 0.25);
+  --text: #f5f7ff;
+  --muted: #9ca6c4;
+  --purple: #7c3cff;
+  --purple2: #a855f7;
+  --cyan: #00e5ff;
+  --green: #00ff9d;
+}
+
+/* Main page */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 5%, rgba(124,60,255,.18), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(0,229,255,.08), transparent 25%),
+    linear-gradient(180deg, #050817 0%, #070b1c 55%, #050817 100%) !important;
+  color: var(--text) !important;
+  min-height: 100vh;
+}
+
+/* Navigation */
+.nav {
+  background: rgba(5, 8, 23, 0.88) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-bottom: 1px solid rgba(124,60,255,.20) !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,.25) !important;
+}
+
+/* RAJA SMM logo */
+.logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+.logo span {
+  display: none !important;
+}
+
+.logo::after {
+  content: "RAJA SMM" !important;
+  display: block !important;
+  font-size: 27px !important;
+  font-weight: 900 !important;
+  font-style: italic !important;
+  letter-spacing: 2px !important;
+  white-space: nowrap !important;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #bfc7d5 28%,
+    #00ff9d 55%,
+    #00d9ff 76%,
+    #9b5cff
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+
+  text-shadow:
+    0 0 10px rgba(0,255,157,.35),
+    0 0 22px rgba(124,60,255,.25) !important;
+}
+
+/* Navigation links */
+.nav nav a {
+  color: #cbd2eb !important;
+  transition: .25s ease !important;
+}
+
+.nav nav a:hover,
+.nav nav a.active {
+  color: #ffffff !important;
+  text-shadow: 0 0 12px rgba(124,60,255,.65) !important;
+}
+
+/* Hero section */
+.hero {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(124,60,255,.13), transparent 48%) !important;
+  padding-top: 75px !important;
+  padding-bottom: 70px !important;
+}
+
+.hero h1 {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.5px !important;
+  text-shadow: 0 8px 35px rgba(0,0,0,.35) !important;
+}
+
+.hero h1 span {
+  background: linear-gradient(
+    90deg,
+    #743cff,
+    #a855f7,
+    #00d9ff
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.hero p,
+.hero-copy p {
+  color: #aab3cf !important;
+}
+
+/* Hero buttons */
+.hero button,
+.hero .primary,
+button.primary {
+  background: linear-gradient(
+    135deg,
+    #6337ff,
+    #a33cff
+  ) !important;
+  border: 0 !important;
+  color: #fff !important;
+  box-shadow:
+    0 10px 30px rgba(124,60,255,.28),
+    inset 0 1px 0 rgba(255,255,255,.18) !important;
+  transition: .25s ease !important;
+}
+
+.hero button:hover,
+.hero .primary:hover,
+button.primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 15px 40px rgba(124,60,255,.42),
+    inset 0 1px 0 rgba(255,255,255,.2) !important;
+}
+
+.hero .ghost,
+button.ghost {
+  background: rgba(10,15,35,.72) !important;
+  border: 1px solid rgba(145,125,255,.35) !important;
+  color: #ffffff !important;
+}
+
+/* Cards */
+.card,
+.cards > *,
+.visual,
+.stats,
+.stat,
+section .card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18,24,55,.92),
+      rgba(8,13,32,.90)
+    ) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 18px !important;
+  box-shadow:
+    0 20px 55px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.035) !important;
+}
+
+/* Stats */
+.stats {
+  overflow: hidden !important;
+}
+
+.stats > * {
+  background: transparent !important;
+  border-color: rgba(124,60,255,.18) !important;
+}
+
+.stats strong,
+.stat strong {
+  color: #ffffff !important;
+}
+
+.stats span,
+.stat span {
+  color: #8f99b8 !important;
+}
+
+/* Services heading */
+section h2,
+.services h2 {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+section h2::after,
+.services h2::after {
+  background: linear-gradient(
+    90deg,
+    #743cff,
+    #00d9ff
+  ) !important;
+}
+
+/* Service cards */
+.cards .card:hover,
+.card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(124,60,255,.48) !important;
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.32),
+    0 0 25px rgba(124,60,255,.08) !important;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  background: #080d20 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(124,60,255,.28) !important;
+  border-radius: 10px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #7c3cff !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(124,60,255,.12) !important;
+}
+
+/* Modal */
+.modal-box {
+  background:
+    linear-gradient(
+      145deg,
+      #111733,
+      #080d20
+    ) !important;
+  border: 1px solid rgba(124,60,255,.35) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 30px 90px rgba(0,0,0,.55) !important;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+
+  .logo::after {
+    font-size: 22px !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .hero {
+    padding-top: 55px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .hero h1 {
+    font-size: 40px !important;
+    line-height: 1.05 !important;
+  }
+
+  .hero p {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+  }
+
+  .cards {
+    gap: 14px !important;
+  }
+
+  .card,
+  .stats {
+    border-radius: 16px !important;
+  }
+}
