@@ -130,8 +130,8 @@ async function handleAuth() {
       );
 
       modal.classList.remove("show");
-
-      showMessage("Login successful! Dashboard next step mein connect karenge.");
+window.location.href = "dashboard.html";
+   
     } else {
       modal.classList.remove("show");
 
