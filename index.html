@@ -13,7 +13,7 @@
   <div class="logo"><span>mudassirsmm.org</span></div>
 
   <nav>
-    <a class="active" href="/">Home</a>
+    <a class="active" href="#">Home</a>
     <a href="#services">Services</a>
     <a href="#how">How It Works</a>
     <a href="#contact">Contact</a>
@@ -32,16 +32,22 @@
 
     <div class="badge">✦ Trusted Social Media Services</div>
 
-    <h1>Boost Your <span>Social Media</span> Presence</h1>
+    <h1>
+      Boost Your <span>Social Media</span> Presence
+    </h1>
 
-    <p>Manage legitimate social-media marketing services from one simple dashboard.</p>
+    <p>
+      Manage legitimate social-media marketing services from one simple dashboard.
+    </p>
 
     <div class="buttons">
       <button class="primary big" onclick="openModal('signup')">
         Get Started →
       </button>
 
-      <a class="ghost big" href="#services">View Services</a>
+      <a class="ghost big" href="#services">
+        View Services
+      </a>
     </div>
 
     <div class="stats">
@@ -76,12 +82,11 @@
 <section id="services" class="section">
 
   <div class="section-title">
-    <div>
-      <span class="eyebrow">OUR SERVICES</span>
-      <h2>Choose a service</h2>
-    </div>
-
-    <p>Start with the service you need and manage everything from your dashboard.</p>
+    <span class="eyebrow">OUR SERVICES</span>
+    <h2>Choose a service</h2>
+    <p>
+      Start with the service you need and manage everything from your dashboard.
+    </p>
   </div>
 
   <div class="cards">
@@ -101,26 +106,25 @@
     <article>
       <div class="icon fbbg"></div>
       <h3>Facebook Marketing</h3>
-      <p>Services for pages and campaigns with clean delivery.</p>
+      <p>Services for pages and campaigns with clear reporting.</p>
     </article>
 
     <article>
       <div class="icon ytbg"></div>
       <h3>YouTube Marketing</h3>
-      <p>Organize promotional services and monitor performance.</p>
+      <p>Organize promotional services and monitor progress.</p>
     </article>
 
   </div>
+
 </section>
 
 
 <section id="how" class="how-section">
 
   <div class="section-title">
-    <div>
-      <span class="eyebrow">HOW IT WORKS</span>
-      <h2>Simple in 3 steps</h2>
-    </div>
+    <span class="eyebrow">HOW IT WORKS</span>
+    <h2>Simple in 3 steps</h2>
   </div>
 
   <div class="steps">
@@ -144,6 +148,7 @@
     </div>
 
   </div>
+
 </section>
 
 </main>
@@ -172,11 +177,33 @@
       This demo form will be connected to the real account system in the next stage.
     </p>
 
-    <input placeholder="Email address">
+    <!-- Username -->
+    <input
+      id="username"
+      placeholder="Username"
+      type="text"
+    >
 
-    <input placeholder="Password" type="password">
+    <!-- Email -->
+    <input
+      id="email"
+      placeholder="Email address"
+      type="email"
+    >
 
-    <button class="primary full">Continue</button>
+    <!-- Password -->
+    <input
+      id="password"
+      placeholder="Password"
+      type="password"
+    >
+
+    <button
+      class="primary full"
+      onclick="submitForm()"
+    >
+      Continue
+    </button>
 
   </div>
 
