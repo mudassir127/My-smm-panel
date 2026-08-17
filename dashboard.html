@@ -1,209 +1,1016 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAJA SMM - Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAJA SMM - Dashboard</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+}
 
-    body {
-      background: #080b20;
-      color: white;
-      min-height: 100vh;
-    }
+body{
+  background:#080b18;
+  color:#fff;
+  min-height:100vh;
+}
 
-    header {
-      padding: 20px;
-      background: #10143a;
-      border-bottom: 1px solid #292e61;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* HEADER */
+.header{
+  height:70px;
+  background:#10162b;
+  border-bottom:1px solid #20294a;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 28px;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      color: #7c5cff;
-    }
+.logo{
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:.5px;
+  color:#7c5cff;
+}
 
-    .logout {
-      background: #ff4d6d;
-      color: white;
-      border: 0;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
 
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
-    }
+.balance-mini{
+  background:#171e39;
+  border:1px solid #29345b;
+  padding:10px 16px;
+  border-radius:10px;
+  color:#c9d1ee;
+}
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+.logout{
+  border:0;
+  background:#ff4f70;
+  color:white;
+  padding:11px 18px;
+  border-radius:9px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .welcome {
-      color: #aeb4d0;
-      margin-bottom: 30px;
-    }
+/* LAYOUT */
+.layout{
+  display:flex;
+  min-height:calc(100vh - 70px);
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-bottom: 30px;
-    }
+/* SIDEBAR */
+.sidebar{
+  width:235px;
+  background:#0d1224;
+  border-right:1px solid #20294a;
+  padding:22px 14px;
+}
 
-    .card {
-      background: #111638;
-      border: 1px solid #292e61;
-      border-radius: 14px;
-      padding: 22px;
-    }
+.sidebar-title{
+  color:#727da5;
+  font-size:12px;
+  text-transform:uppercase;
+  margin:10px 12px;
+}
 
-    .card span {
-      display: block;
-      color: #9299bd;
-      margin-bottom: 8px;
-    }
+.nav{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
 
-    .card strong {
-      font-size: 25px;
-    }
+.nav button{
+  width:100%;
+  background:transparent;
+  border:0;
+  color:#aeb7d4;
+  padding:13px 14px;
+  border-radius:9px;
+  text-align:left;
+  font-size:15px;
+  cursor:pointer;
+}
 
-    .panel {
-      background: #111638;
-      border: 1px solid #292e61;
-      border-radius: 14px;
-      padding: 22px;
-    }
+.nav button:hover,
+.nav button.active{
+  background:#171f42;
+  color:#fff;
+}
 
-    .panel h2 {
-      margin-bottom: 20px;
-    }
+/* MAIN */
+.main{
+  flex:1;
+  padding:30px;
+  max-width:1250px;
+}
 
-    .service {
-      background: #191e48;
-      padding: 16px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.page-title{
+  font-size:30px;
+  margin-bottom:7px;
+}
 
-    .order-btn {
-      background: #6d5dfc;
-      color: white;
-      border: 0;
-      padding: 9px 14px;
-      border-radius: 7px;
-      cursor: pointer;
-    }
+.subtitle{
+  color:#8791b3;
+  margin-bottom:28px;
+}
 
-    @media (max-width: 600px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+  margin-bottom:25px;
+}
 
-      header {
-        padding: 15px;
-      }
+.stat{
+  background:#111832;
+  border:1px solid #222d55;
+  border-radius:15px;
+  padding:22px;
+}
 
-      .logo {
-        font-size: 23px;
-      }
-    }
-  </style>
+.stat-label{
+  color:#8993b5;
+  font-size:14px;
+  margin-bottom:13px;
+}
+
+.stat-value{
+  font-size:27px;
+  font-weight:800;
+}
+
+.stat-icon{
+  float:right;
+  font-size:24px;
+}
+
+/* CONTENT */
+.grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:20px;
+}
+
+.panel{
+  background:#101731;
+  border:1px solid #222d55;
+  border-radius:15px;
+  padding:22px;
+  margin-bottom:20px;
+}
+
+.panel h2{
+  font-size:20px;
+  margin-bottom:18px;
+}
+
+label{
+  display:block;
+  color:#929cbd;
+  font-size:14px;
+  margin:13px 0 7px;
+}
+
+select,
+input{
+  width:100%;
+  background:#080d20;
+  color:#fff;
+  border:1px solid #29345b;
+  padding:13px;
+  border-radius:9px;
+  outline:none;
+}
+
+select:focus,
+input:focus{
+  border-color:#755cff;
+}
+
+.service-info{
+  background:#171f40;
+  border-radius:10px;
+  padding:14px;
+  margin-top:15px;
+  color:#aeb8d8;
+  line-height:1.6;
+}
+
+.order-btn{
+  width:100%;
+  margin-top:18px;
+  border:0;
+  background:#7058ff;
+  color:white;
+  padding:14px;
+  border-radius:9px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.order-btn:hover{
+  background:#6047ed;
+}
+
+/* QUICK LINKS */
+.quick{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.quick button{
+  background:#171f40;
+  border:1px solid #29345b;
+  color:white;
+  padding:15px 10px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.quick button:hover{
+  border-color:#765fff;
+}
+
+/* SERVICES */
+.service{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#151d3b;
+  border:1px solid #252f55;
+  padding:16px;
+  border-radius:11px;
+  margin-bottom:10px;
+}
+
+.service-name{
+  font-weight:bold;
+}
+
+.service-meta{
+  color:#8994b5;
+  font-size:13px;
+  margin-top:5px;
+}
+
+.service button{
+  background:#7058ff;
+  color:white;
+  border:0;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* ORDERS */
+.order-row{
+  display:grid;
+  grid-template-columns:80px 1fr 100px 80px;
+  gap:10px;
+  padding:14px 0;
+  border-bottom:1px solid #20294a;
+  color:#cbd2e8;
+  font-size:14px;
+}
+
+.status{
+  color:#56d69a;
+}
+
+/* MOBILE */
+.mobile-menu{
+  display:none;
+}
+
+@media(max-width:900px){
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .sidebar{
+    width:205px;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .header{
+    height:64px;
+    padding:0 15px;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .balance-mini{
+    display:none;
+  }
+
+  .layout{
+    display:block;
+  }
+
+  .sidebar{
+    display:none;
+    width:100%;
+    border-right:0;
+    border-bottom:1px solid #20294a;
+  }
+
+  .sidebar.show{
+    display:block;
+  }
+
+  .mobile-menu{
+    display:block;
+    background:#171f40;
+    border:1px solid #29345b;
+    color:white;
+    padding:9px 12px;
+    border-radius:8px;
+    margin-right:8px;
+  }
+
+  .header-right{
+    gap:7px;
+  }
+
+  .logout{
+    padding:9px 12px;
+  }
+
+  .main{
+    padding:18px 14px;
+  }
+
+  .page-title{
+    font-size:25px;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .stat{
+    padding:16px;
+  }
+
+  .stat-value{
+    font-size:22px;
+  }
+
+  .stat-icon{
+    display:none;
+  }
+
+  .panel{
+    padding:17px;
+  }
+
+  .service{
+    gap:10px;
+  }
+
+  .service button{
+    padding:9px 12px;
+  }
+
+  .order-row{
+    grid-template-columns:60px 1fr 75px;
+  }
+
+  .order-row div:last-child{
+    display:none;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
+<header class="header">
+
+  <div style="display:flex;align-items:center;gap:10px;">
+    <button class="mobile-menu" onclick="toggleMenu()">☰</button>
     <div class="logo">RAJA SMM</div>
+  </div>
+
+  <div class="header-right">
+    <div class="balance-mini">
+      Balance: <b id="topBalance">$0.00</b>
+    </div>
+
     <button class="logout" onclick="logout()">Logout</button>
-  </header>
+  </div>
 
-  <main>
-    <h1>Dashboard</h1>
-    <p class="welcome">Welcome to your RAJA SMM account.</p>
+</header>
 
-    <div class="cards">
-      <div class="card">
-        <span>Balance</span>
-        <strong>$0.00</strong>
-      </div>
 
-      <div class="card">
-        <span>Total Orders</span>
-        <strong>0</strong>
-      </div>
+<div class="layout">
 
-      <div class="card">
-        <span>Active Orders</span>
-        <strong>0</strong>
-      </div>
+  <aside class="sidebar" id="sidebar">
 
-      <div class="card">
-        <span>Services</span>
-        <strong>100+</strong>
-      </div>
+    <div class="sidebar-title">MENU</div>
+
+    <div class="nav">
+      <button class="active" onclick="showSection('dashboard')">
+        🏠 Dashboard
+      </button>
+
+      <button onclick="showSection('neworder')">
+        🛒 New Order
+      </button>
+
+      <button onclick="showSection('orders')">
+        📦 My Orders
+      </button>
+
+      <button onclick="showSection('services')">
+        ⚡ Services
+      </button>
+
+      <button onclick="showSection('funds')">
+        💳 Add Funds
+      </button>
+
+      <button onclick="showSection('support')">
+        🎫 Support
+      </button>
     </div>
 
-    <div class="panel">
-      <h2>Available Services</h2>
+    <div class="sidebar-title">ACCOUNT</div>
 
-      <div class="service">
-        <span>Instagram Marketing</span>
-        <button class="order-btn" onclick="order()">Order</button>
-      </div>
-
-      <div class="service">
-        <span>TikTok Marketing</span>
-        <button class="order-btn" onclick="order()">Order</button>
-      </div>
-
-      <div class="service">
-        <span>Facebook Marketing</span>
-        <button class="order-btn" onclick="order()">Order</button>
-      </div>
-
-      <div class="service">
-        <span>YouTube Marketing</span>
-        <button class="order-btn" onclick="order()">Order</button>
-      </div>
+    <div class="nav">
+      <button onclick="showSection('settings')">
+        ⚙️ Settings
+      </button>
     </div>
+
+  </aside>
+
+
+  <main class="main">
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard">
+
+      <h1 class="page-title">Dashboard</h1>
+      <p class="subtitle">
+        Welcome back to your RAJA SMM account.
+      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <span class="stat-icon">💰</span>
+          <div class="stat-label">Balance</div>
+          <div class="stat-value" id="balance">$0.00</div>
+        </div>
+
+        <div class="stat">
+          <span class="stat-icon">📦</span>
+          <div class="stat-label">Total Orders</div>
+          <div class="stat-value" id="totalOrders">0</div>
+        </div>
+
+        <div class="stat">
+          <span class="stat-icon">⚡</span>
+          <div class="stat-label">Active Orders</div>
+          <div class="stat-value" id="activeOrders">0</div>
+        </div>
+
+        <div class="stat">
+          <span class="stat-icon">🛍️</span>
+          <div class="stat-label">Services</div>
+          <div class="stat-value">100+</div>
+        </div>
+
+      </div>
+
+
+      <div class="grid">
+
+        <div class="panel">
+
+          <h2>Quick New Order</h2>
+
+          <label>Category</label>
+
+          <select id="category" onchange="updateService()">
+            <option>Instagram</option>
+            <option>TikTok</option>
+            <option>YouTube</option>
+            <option>Facebook</option>
+            <option>Telegram</option>
+          </select>
+
+          <label>Service</label>
+
+          <select id="service">
+            <option>Instagram Followers</option>
+            <option>Instagram Likes</option>
+            <option>Instagram Views</option>
+          </select>
+
+          <label>Link</label>
+
+          <input
+            id="link"
+            type="text"
+            placeholder="Enter your post/profile link"
+          >
+
+          <label>Quantity</label>
+
+          <input
+            id="quantity"
+            type="number"
+            placeholder="Example: 1000"
+          >
+
+          <div class="service-info">
+            Rate: <b>$0.50 / 1000</b><br>
+            Minimum: 100<br>
+            Maximum: 100000
+          </div>
+
+          <button class="order-btn" onclick="placeOrder()">
+            Place Order
+          </button>
+
+        </div>
+
+
+        <div>
+
+          <div class="panel">
+
+            <h2>Quick Access</h2>
+
+            <div class="quick">
+
+              <button onclick="showSection('neworder')">
+                🛒<br>New Order
+              </button>
+
+              <button onclick="showSection('orders')">
+                📦<br>My Orders
+              </button>
+
+              <button onclick="showSection('funds')">
+                💳<br>Add Funds
+              </button>
+
+              <button onclick="showSection('support')">
+                🎫<br>Support
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="panel">
+
+            <h2>Account Information</h2>
+
+            <p style="color:#909ab9;line-height:1.8;">
+              Your account is active.<br>
+              Keep your login details secure.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NEW ORDER -->
+
+    <section id="neworder" style="display:none;">
+
+      <h1 class="page-title">New Order</h1>
+      <p class="subtitle">Create a new social media service order.</p>
+
+      <div class="panel">
+
+        <label>Category</label>
+
+        <select>
+          <option>Instagram</option>
+          <option>TikTok</option>
+          <option>YouTube</option>
+          <option>Facebook</option>
+          <option>Telegram</option>
+        </select>
+
+        <label>Service</label>
+
+        <select>
+          <option>Followers</option>
+          <option>Likes</option>
+          <option>Views</option>
+          <option>Comments</option>
+        </select>
+
+        <label>Link</label>
+
+        <input type="text" placeholder="Enter link">
+
+        <label>Quantity</label>
+
+        <input type="number" placeholder="Enter quantity">
+
+        <button class="order-btn" onclick="placeOrder()">
+          Place Order
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ORDERS -->
+
+    <section id="orders" style="display:none;">
+
+      <h1 class="page-title">My Orders</h1>
+      <p class="subtitle">Track your recent orders.</p>
+
+      <div class="panel">
+
+        <div class="order-row">
+          <b>ID</b>
+          <b>Service</b>
+          <b>Amount</b>
+          <b>Status</b>
+        </div>
+
+        <div id="ordersList">
+
+          <div style="padding:25px 0;color:#8791b3;">
+            No orders yet.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services" style="display:none;">
+
+      <h1 class="page-title">Services</h1>
+      <p class="subtitle">Choose a service to place an order.</p>
+
+      <div class="panel">
+
+        <div class="service">
+          <div>
+            <div class="service-name">Instagram Followers</div>
+            <div class="service-meta">$0.50 / 1000</div>
+          </div>
+          <button onclick="showSection('neworder')">Order</button>
+        </div>
+
+        <div class="service">
+          <div>
+            <div class="service-name">Instagram Likes</div>
+            <div class="service-meta">$0.30 / 1000</div>
+          </div>
+          <button onclick="showSection('neworder')">Order</button>
+        </div>
+
+        <div class="service">
+          <div>
+            <div class="service-name">TikTok Views</div>
+            <div class="service-meta">$0.20 / 1000</div>
+          </div>
+          <button onclick="showSection('neworder')">Order</button>
+        </div>
+
+        <div class="service">
+          <div>
+            <div class="service-name">YouTube Views</div>
+            <div class="service-meta">$0.80 / 1000</div>
+          </div>
+          <button onclick="showSection('neworder')">Order</button>
+        </div>
+
+        <div class="service">
+          <div>
+            <div class="service-name">Facebook Followers</div>
+            <div class="service-meta">$0.60 / 1000</div>
+          </div>
+          <button onclick="showSection('neworder')">Order</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ADD FUNDS -->
+
+    <section id="funds" style="display:none;">
+
+      <h1 class="page-title">Add Funds</h1>
+      <p class="subtitle">Add balance to your RAJA SMM account.</p>
+
+      <div class="panel">
+
+        <h2>Payment Methods</h2>
+
+        <div class="quick">
+
+          <button onclick="paymentMessage('JazzCash')">
+            💳<br>JazzCash
+          </button>
+
+          <button onclick="paymentMessage('EasyPaisa')">
+            💳<br>EasyPaisa
+          </button>
+
+        </div>
+
+        <div class="service-info" style="margin-top:20px;">
+          Payment gateway/backend abhi connect nahi hai.
+          Pehle UI complete kar rahe hain.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SUPPORT -->
+
+    <section id="support" style="display:none;">
+
+      <h1 class="page-title">Support</h1>
+      <p class="subtitle">Need help? Contact RAJA SMM support.</p>
+
+      <div class="panel">
+
+        <label>Subject</label>
+        <input type="text" placeholder="Enter subject">
+
+        <label>Message</label>
+        <input type="text" placeholder="Describe your issue">
+
+        <button class="order-btn" onclick="alert('Support system backend next step mein connect hoga.')">
+          Submit Ticket
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- SETTINGS -->
+
+    <section id="settings" style="display:none;">
+
+      <h1 class="page-title">Settings</h1>
+      <p class="subtitle">Manage your account settings.</p>
+
+      <div class="panel">
+
+        <label>Email</label>
+        <input id="accountEmail" type="email" readonly>
+
+        <label>Account Status</label>
+        <input value="Active" readonly>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <script>
-    const session = localStorage.getItem("raja_smm_session");
+</div>
 
-    if (!session) {
-      window.location.href = "index.html";
+
+<script>
+
+/* LOGIN SESSION — ISKO PRESERVE KIYA GAYA HAI */
+
+const session = localStorage.getItem("raja_smm_session");
+
+if(!session){
+  window.location.href = "index.html";
+}
+
+
+/* MENU */
+
+function toggleMenu(){
+
+  document.getElementById("sidebar")
+    .classList.toggle("show");
+
+}
+
+
+/* SECTION SWITCH */
+
+function showSection(id){
+
+  const sections = [
+    "dashboard",
+    "neworder",
+    "orders",
+    "services",
+    "funds",
+    "support",
+    "settings"
+  ];
+
+  sections.forEach(function(section){
+
+    const el = document.getElementById(section);
+
+    if(el){
+      el.style.display =
+        section === id ? "block" : "none";
     }
 
-    function logout() {
-      localStorage.removeItem("raja_smm_session");
-      window.location.href = "index.html";
-    }
+  });
 
-    function order() {
-      alert("Service order system next step mein connect karenge.");
-    }
-  </script>
+  document.getElementById("sidebar")
+    .classList.remove("show");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* LOGOUT */
+
+function logout(){
+
+  localStorage.removeItem("raja_smm_session");
+
+  window.location.href = "index.html";
+
+}
+
+
+/* ORDER DEMO */
+
+function placeOrder(){
+
+  const link = document.getElementById("link");
+
+  const quantity = document.getElementById("quantity");
+
+  if(link && !link.value.trim()){
+
+    alert("Please enter your link.");
+
+    return;
+  }
+
+  if(quantity && !quantity.value){
+
+    alert("Please enter quantity.");
+
+    return;
+  }
+
+  alert(
+    "Order form ready. API/backend connection next step mein connect hoga."
+  );
+
+}
+
+
+/* PAYMENT */
+
+function paymentMessage(method){
+
+  alert(
+    method +
+    " payment system next step mein connect hoga."
+  );
+
+}
+
+
+/* SERVICE */
+
+function updateService(){
+
+  const category =
+    document.getElementById("category").value;
+
+  const service =
+    document.getElementById("service");
+
+  if(category === "Instagram"){
+
+    service.innerHTML = `
+      <option>Instagram Followers</option>
+      <option>Instagram Likes</option>
+      <option>Instagram Views</option>
+    `;
+
+  }
+
+  else if(category === "TikTok"){
+
+    service.innerHTML = `
+      <option>TikTok Followers</option>
+      <option>TikTok Likes</option>
+      <option>TikTok Views</option>
+    `;
+
+  }
+
+  else if(category === "YouTube"){
+
+    service.innerHTML = `
+      <option>YouTube Subscribers</option>
+      <option>YouTube Views</option>
+      <option>YouTube Likes</option>
+    `;
+
+  }
+
+  else if(category === "Facebook"){
+
+    service.innerHTML = `
+      <option>Facebook Followers</option>
+      <option>Facebook Likes</option>
+    `;
+
+  }
+
+  else{
+
+    service.innerHTML = `
+      <option>Telegram Members</option>
+      <option>Telegram Views</option>
+    `;
+
+  }
+
+}
+
+
+/* ACCOUNT EMAIL */
+
+try{
+
+  const data = JSON.parse(session);
+
+  if(data && data.email){
+
+    document.getElementById("accountEmail")
+      .value = data.email;
+
+  }
+
+}catch(e){
+
+  console.log("Session data unavailable");
+
+}
+
+</script>
 
 </body>
 </html>
