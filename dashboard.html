@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,360 +14,515 @@
   font-family:Arial,Helvetica,sans-serif;
 }
 
+:root{
+  --blue:#1465ff;
+  --blue2:#0b3ea8;
+  --yellow:#ffb400;
+  --red:#ef233c;
+  --bg:#020d1c;
+  --panel:#06182b;
+  --card:#081b30;
+  --border:#1b4770;
+  --text:#fff;
+  --muted:#aebbd0;
+}
+
 body{
-  background:#080b18;
-  color:#fff;
+  background:var(--bg);
+  color:var(--text);
   min-height:100vh;
 }
 
-/* HEADER */
-.header{
-  height:70px;
-  background:#10162b;
-  border-bottom:1px solid #20294a;
+/* TOP BAR */
+.topbar{
+  height:108px;
+  background:#031120;
+  border-bottom:1px solid #18324c;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  padding:0 28px;
+  padding:0 24px;
+  gap:24px;
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:100;
+}
+
+.menu-btn{
+  width:66px;
+  height:66px;
+  border:1px solid #174b87;
+  border-radius:12px;
+  background:#063273;
+  color:white;
+  font-size:32px;
+  cursor:pointer;
 }
 
 .logo{
-  font-size:25px;
-  font-weight:800;
-  letter-spacing:.5px;
-  color:#7c5cff;
+  font-size:50px;
+  font-weight:900;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,#ffbd00,#ff9d00,#f00028);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.header-right{
+.logo-icon{
+  color:var(--yellow);
+  margin-right:8px;
+}
+
+.top-right{
+  margin-left:auto;
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:24px;
 }
 
 .balance-mini{
-  background:#171e39;
-  border:1px solid #29345b;
-  padding:10px 16px;
-  border-radius:10px;
-  color:#c9d1ee;
+  min-width:150px;
+  padding:12px 18px;
+  border:1px solid #29415d;
+  border-radius:12px;
+  text-align:center;
+}
+
+.balance-mini strong{
+  font-size:20px;
+  display:block;
+}
+
+.balance-mini span{
+  color:#b9c3d2;
 }
 
 .logout{
   border:0;
-  background:#ff4f70;
+  border-radius:10px;
+  background:linear-gradient(135deg,#ff3131,#e00021);
   color:white;
-  padding:11px 18px;
-  border-radius:9px;
-  font-weight:bold;
+  padding:17px 28px;
+  font-size:20px;
   cursor:pointer;
 }
 
 /* LAYOUT */
 .layout{
   display:flex;
-  min-height:calc(100vh - 70px);
+  min-height:calc(100vh - 108px);
 }
 
 /* SIDEBAR */
 .sidebar{
-  width:235px;
-  background:#0d1224;
-  border-right:1px solid #20294a;
-  padding:22px 14px;
+  width:225px;
+  flex-shrink:0;
+  background:#031426;
+  border-right:1px solid #18324c;
+  padding:20px 14px;
 }
 
-.sidebar-title{
-  color:#727da5;
-  font-size:12px;
-  text-transform:uppercase;
-  margin:10px 12px;
-}
-
-.nav{
+.nav-item{
   display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-
-.nav button{
-  width:100%;
-  background:transparent;
-  border:0;
-  color:#aeb7d4;
-  padding:13px 14px;
+  align-items:center;
+  gap:18px;
+  padding:16px 14px;
+  margin-bottom:7px;
   border-radius:9px;
-  text-align:left;
-  font-size:15px;
+  color:#f1f4f8;
+  font-size:19px;
   cursor:pointer;
 }
 
-.nav button:hover,
-.nav button.active{
-  background:#171f42;
-  color:#fff;
+.nav-item:hover,
+.nav-item.active{
+  background:linear-gradient(90deg,#0759e8,#1145bc);
+}
+
+.nav-icon{
+  width:28px;
+  text-align:center;
+  font-size:22px;
+}
+
+.nav-divider{
+  height:1px;
+  background:#18324c;
+  margin:14px 12px;
+}
+
+.account-title{
+  color:#9ca9bc;
+  padding:10px 14px;
+  font-size:16px;
+}
+
+.brand-box{
+  margin-top:20px;
+  border:1px solid #8b98a8;
+  border-radius:9px;
+  padding:20px 10px;
+  text-align:center;
+}
+
+.brand-box strong{
+  color:var(--yellow);
+  font-size:19px;
+}
+
+.brand-box p{
+  margin-top:14px;
+  line-height:1.5;
+  color:#f1f1f1;
 }
 
 /* MAIN */
 .main{
   flex:1;
-  padding:30px;
-  max-width:1250px;
+  padding:30px 20px;
+  max-width:1300px;
+  margin:auto;
+  width:100%;
 }
 
-.page-title{
-  font-size:30px;
-  margin-bottom:7px;
-}
-
-.subtitle{
-  color:#8791b3;
+.hero{
+  text-align:center;
   margin-bottom:28px;
+}
+
+.hero h1{
+  font-size:70px;
+  font-weight:900;
+  background:linear-gradient(90deg,#ffb400 0%,#ffb400 43%,#ef233c 63%,#ed102b 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  color:#adb8c9;
+  font-size:24px;
+  margin-top:10px;
+}
+
+.hero-line{
+  color:var(--yellow);
+  font-size:30px;
+  letter-spacing:8px;
 }
 
 /* STATS */
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:17px;
-  margin-bottom:25px;
-}
-
-.stat{
-  background:#111832;
-  border:1px solid #222d55;
-  border-radius:15px;
-  padding:22px;
-}
-
-.stat-label{
-  color:#8993b5;
-  font-size:14px;
-  margin-bottom:13px;
-}
-
-.stat-value{
-  font-size:27px;
-  font-weight:800;
-}
-
-.stat-icon{
-  float:right;
-  font-size:24px;
-}
-
-/* CONTENT */
-.grid{
-  display:grid;
-  grid-template-columns:1.5fr 1fr;
-  gap:20px;
-}
-
-.panel{
-  background:#101731;
-  border:1px solid #222d55;
-  border-radius:15px;
-  padding:22px;
-  margin-bottom:20px;
-}
-
-.panel h2{
-  font-size:20px;
+  gap:14px;
   margin-bottom:18px;
 }
 
+.stat{
+  min-height:250px;
+  background:linear-gradient(145deg,#061a30,#071323);
+  border:1px solid #245083;
+  border-radius:15px;
+  padding:24px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.stat.yellow{border-color:#47536a}
+.stat.red{border-color:#9b2637}
+
+.stat-icon{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+  background:#0757e8;
+  margin-bottom:18px;
+}
+
+.stat.yellow .stat-icon{background:#ffb400}
+.stat.red .stat-icon{background:#ef233c}
+
+.stat h3{
+  font-size:20px;
+  font-weight:400;
+  margin-bottom:14px;
+}
+
+.stat strong{
+  font-size:34px;
+}
+
+.stat-line{
+  width:60px;
+  height:5px;
+  border-radius:5px;
+  background:var(--blue);
+  margin-top:20px;
+}
+
+.stat.yellow .stat-line{background:var(--yellow)}
+.stat.red .stat-line{background:var(--red)}
+
+/* CONTENT GRID */
+.content-grid{
+  display:grid;
+  grid-template-columns:1.45fr 1fr;
+  gap:16px;
+}
+
+.box{
+  background:linear-gradient(145deg,#03182c,#061322);
+  border:1px solid #3b4d61;
+  border-radius:14px;
+  padding:22px;
+  margin-bottom:16px;
+}
+
+.box-title{
+  font-size:22px;
+  font-weight:bold;
+  color:var(--yellow);
+  margin-bottom:22px;
+}
+
+/* ORDER */
 label{
   display:block;
-  color:#929cbd;
-  font-size:14px;
-  margin:13px 0 7px;
+  margin:16px 0 8px;
+  font-size:18px;
 }
 
 select,
 input{
   width:100%;
-  background:#080d20;
-  color:#fff;
-  border:1px solid #29345b;
-  padding:13px;
+  background:#020b1b;
+  color:white;
+  border:1px solid #24486d;
   border-radius:9px;
+  padding:15px;
+  font-size:17px;
   outline:none;
 }
 
 select:focus,
 input:focus{
-  border-color:#755cff;
+  border-color:var(--blue);
 }
 
 .service-info{
-  background:#171f40;
+  margin-top:14px;
+  padding:18px;
+  border:1px solid #145bc2;
+  background:#051a32;
   border-radius:10px;
+}
+
+.service-name{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.service-meta{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:10px;
+}
+
+.service-meta div{
+  border-right:1px solid #203a55;
+  padding-right:8px;
+}
+
+.service-meta span{
+  display:block;
+  color:#9eacc0;
+  margin-bottom:6px;
+}
+
+.rate{
+  color:#1c79ff;
+}
+
+.charge{
+  margin-top:12px;
   padding:14px;
-  margin-top:15px;
-  color:#aeb8d8;
-  line-height:1.6;
+  border:1px solid #29445f;
+  border-radius:9px;
+}
+
+.charge span{
+  display:block;
+  color:#aebbd0;
+}
+
+.charge strong{
+  color:var(--yellow);
+  font-size:25px;
 }
 
 .order-btn{
   width:100%;
-  margin-top:18px;
+  margin-top:12px;
   border:0;
-  background:#7058ff;
-  color:white;
+  border-radius:8px;
   padding:14px;
-  border-radius:9px;
-  font-size:16px;
+  font-size:18px;
   font-weight:bold;
-  cursor:pointer;
-}
-
-.order-btn:hover{
-  background:#6047ed;
-}
-
-/* QUICK LINKS */
-.quick{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.quick button{
-  background:#171f40;
-  border:1px solid #29345b;
   color:white;
-  padding:15px 10px;
-  border-radius:10px;
+  background:linear-gradient(90deg,#ffb400,#ff9d00,#ef233c);
   cursor:pointer;
 }
 
-.quick button:hover{
-  border-color:#765fff;
+/* QUICK ACCESS */
+.quick-btn{
+  width:100%;
+  border:0;
+  border-radius:9px;
+  padding:16px;
+  margin-bottom:12px;
+  color:white;
+  font-size:18px;
+  text-align:left;
+  cursor:pointer;
 }
 
-/* SERVICES */
-.service{
+.quick-blue{background:linear-gradient(90deg,#0759e8,#174dc5)}
+.quick-yellow{background:linear-gradient(90deg,#ffb400,#f29c00)}
+.quick-red{background:linear-gradient(90deg,#ef233c,#d70d25)}
+
+.account-info{
+  line-height:2.2;
+}
+
+.account-row{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  background:#151d3b;
-  border:1px solid #252f55;
-  padding:16px;
-  border-radius:11px;
-  margin-bottom:10px;
-}
-
-.service-name{
-  font-weight:bold;
-}
-
-.service-meta{
-  color:#8994b5;
-  font-size:13px;
-  margin-top:5px;
-}
-
-.service button{
-  background:#7058ff;
-  color:white;
-  border:0;
-  padding:10px 15px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-/* ORDERS */
-.order-row{
-  display:grid;
-  grid-template-columns:80px 1fr 100px 80px;
-  gap:10px;
-  padding:14px 0;
-  border-bottom:1px solid #20294a;
-  color:#cbd2e8;
-  font-size:14px;
+  border-bottom:1px solid #172d44;
 }
 
 .status{
-  color:#56d69a;
+  background:#18a85b;
+  border-radius:20px;
+  padding:3px 15px;
+  line-height:1.4;
+}
+
+/* ANNOUNCEMENT */
+.announcement{
+  border:1px solid #145bc2;
+  border-radius:12px;
+  padding:20px;
+  margin-top:2px;
+  background:#041a31;
+}
+
+.announcement h3{
+  color:#1680ff;
+  margin-bottom:8px;
+}
+
+.footer{
+  text-align:center;
+  padding:22px;
+  color:#b6c1d0;
+}
+
+.footer strong{
+  color:var(--yellow);
 }
 
 /* MOBILE */
-.mobile-menu{
-  display:none;
-}
-
 @media(max-width:900px){
-
-  .stats{
-    grid-template-columns:1fr 1fr;
+  .sidebar{
+    position:fixed;
+    left:-250px;
+    top:108px;
+    bottom:0;
+    z-index:90;
+    transition:.25s;
   }
 
-  .grid{
+  .sidebar.open{
+    left:0;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .content-grid{
     grid-template-columns:1fr;
   }
 
-  .sidebar{
-    width:205px;
+  .hero h1{
+    font-size:50px;
   }
-
 }
 
-@media(max-width:650px){
+@media(max-width:600px){
+  .topbar{
+    height:88px;
+    padding:0 14px;
+    gap:12px;
+  }
 
-  .header{
-    height:64px;
-    padding:0 15px;
+  .menu-btn{
+    width:54px;
+    height:54px;
+    font-size:27px;
   }
 
   .logo{
-    font-size:21px;
+    font-size:30px;
   }
 
-  .balance-mini{
-    display:none;
-  }
-
-  .layout{
-    display:block;
-  }
-
-  .sidebar{
-    display:none;
-    width:100%;
-    border-right:0;
-    border-bottom:1px solid #20294a;
-  }
-
-  .sidebar.show{
-    display:block;
-  }
-
-  .mobile-menu{
-    display:block;
-    background:#171f40;
-    border:1px solid #29345b;
-    color:white;
-    padding:9px 12px;
-    border-radius:8px;
-    margin-right:8px;
-  }
-
-  .header-right{
+  .top-right{
     gap:7px;
   }
 
+  .balance-mini{
+    min-width:auto;
+    padding:8px;
+  }
+
+  .balance-mini strong{
+    font-size:15px;
+  }
+
+  .balance-mini span{
+    font-size:12px;
+  }
+
   .logout{
-    padding:9px 12px;
+    padding:12px 14px;
+    font-size:15px;
+  }
+
+  .layout{
+    min-height:calc(100vh - 88px);
+  }
+
+  .sidebar{
+    top:88px;
   }
 
   .main{
-    padding:18px 14px;
+    padding:20px 12px;
   }
 
-  .page-title{
-    font-size:25px;
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:17px;
   }
 
   .stats{
@@ -375,35 +531,38 @@ input:focus{
   }
 
   .stat{
-    padding:16px;
-  }
-
-  .stat-value{
-    font-size:22px;
+    min-height:190px;
+    padding:14px 8px;
   }
 
   .stat-icon{
-    display:none;
+    width:55px;
+    height:55px;
+    font-size:27px;
   }
 
-  .panel{
-    padding:17px;
+  .stat h3{
+    font-size:15px;
   }
 
-  .service{
-    gap:10px;
+  .stat strong{
+    font-size:27px;
   }
 
-  .service button{
-    padding:9px 12px;
+  .content-grid{
+    display:block;
   }
 
-  .order-row{
-    grid-template-columns:60px 1fr 75px;
+  .box{
+    padding:16px;
   }
 
-  .order-row div:last-child{
-    display:none;
+  .service-meta{
+    grid-template-columns:1.5fr 1fr 1fr;
+  }
+
+  .service-meta div{
+    font-size:13px;
   }
 }
 </style>
@@ -411,604 +570,487 @@ input:focus{
 
 <body>
 
-<header class="header">
+<header class="topbar">
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
-  <div style="display:flex;align-items:center;gap:10px;">
-    <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-    <div class="logo">RAJA SMM</div>
+  <div class="logo">
+    <span class="logo-icon">♛</span> RAJA SMM
   </div>
 
-  <div class="header-right">
+  <div class="top-right">
     <div class="balance-mini">
-      Balance: <b id="topBalance">$0.00</b>
+      <strong id="topBalance">$0.00</strong>
+      <span>Balance</span>
     </div>
 
-    <button class="logout" onclick="logout()">Logout</button>
+    <button class="logout" onclick="logout()">⇥ Logout</button>
   </div>
-
 </header>
-
 
 <div class="layout">
 
-  <aside class="sidebar" id="sidebar">
+<aside class="sidebar" id="sidebar">
 
-    <div class="sidebar-title">MENU</div>
+  <div class="nav-item active">
+    <span class="nav-icon">⌂</span> Dashboard
+  </div>
 
-    <div class="nav">
-      <button class="active" onclick="showSection('dashboard')">
-        🏠 Dashboard
-      </button>
+  <div class="nav-item" onclick="scrollToOrder()">
+    <span class="nav-icon">🛒</span> New Order
+  </div>
 
-      <button onclick="showSection('neworder')">
-        🛒 New Order
-      </button>
+  <div class="nav-divider"></div>
 
-      <button onclick="showSection('orders')">
-        📦 My Orders
-      </button>
+  <div class="nav-item" onclick="scrollToOrder()">
+    <span class="nav-icon">▦</span> Services
+  </div>
 
-      <button onclick="showSection('services')">
-        ⚡ Services
-      </button>
+  <div class="nav-item">
+    <span class="nav-icon">▣</span> Orders
+  </div>
 
-      <button onclick="showSection('funds')">
-        💳 Add Funds
-      </button>
+  <div class="nav-item">
+    <span class="nav-icon">▰</span> Add Funds
+  </div>
 
-      <button onclick="showSection('support')">
-        🎫 Support
-      </button>
+  <div class="nav-item">
+    <span class="nav-icon">♧</span> Support
+  </div>
+
+  <div class="nav-divider"></div>
+
+  <div class="account-title">ACCOUNT</div>
+
+  <div class="nav-item">
+    <span class="nav-icon">⚙</span> Settings
+  </div>
+
+  <div class="nav-item">
+    <span class="nav-icon">‹/›</span> API
+  </div>
+
+  <div class="brand-box">
+    <strong>♛ RAJA SMM</strong>
+    <p>Trusted SMM Panel<br>Best Quality Services</p>
+  </div>
+
+</aside>
+
+<main class="main">
+
+  <section class="hero">
+    <h1>RAJA <span>SMM</span> ✓</h1>
+    <div class="hero-line">━━━━</div>
+    <p>Trusted Social Media Marketing Panel</p>
+  </section>
+
+  <section class="stats">
+
+    <div class="stat">
+      <div class="stat-icon">▣</div>
+      <h3>Balance</h3>
+      <strong id="balance">$0.00</strong>
+      <div class="stat-line"></div>
     </div>
 
-    <div class="sidebar-title">ACCOUNT</div>
-
-    <div class="nav">
-      <button onclick="showSection('settings')">
-        ⚙️ Settings
-      </button>
+    <div class="stat yellow">
+      <div class="stat-icon">♙</div>
+      <h3>Total Orders</h3>
+      <strong>0</strong>
+      <div class="stat-line"></div>
     </div>
 
-  </aside>
+    <div class="stat red">
+      <div class="stat-icon">⌁</div>
+      <h3>Active Orders</h3>
+      <strong>0</strong>
+      <div class="stat-line"></div>
+    </div>
 
+    <div class="stat">
+      <div class="stat-icon">▱</div>
+      <h3>Services</h3>
+      <strong>100+</strong>
+      <div class="stat-line"></div>
+    </div>
 
-  <main class="main">
+  </section>
 
-    <!-- DASHBOARD -->
+  <section class="content-grid">
 
-    <section id="dashboard">
+    <!-- QUICK ORDER -->
+    <div class="box" id="orderBox">
 
-      <h1 class="page-title">Dashboard</h1>
-      <p class="subtitle">
-        Welcome back to your RAJA SMM account.
-      </p>
+      <div class="box-title">🛒 &nbsp; Quick New Order</div>
 
-      <div class="stats">
+      <label>Category</label>
+      <select id="category" onchange="loadServices()">
+        <option value="tiktok">TikTok</option>
+        <option value="instagram">Instagram</option>
+        <option value="youtube">YouTube</option>
+        <option value="facebook">Facebook</option>
+      </select>
 
-        <div class="stat">
-          <span class="stat-icon">💰</span>
-          <div class="stat-label">Balance</div>
-          <div class="stat-value" id="balance">$0.00</div>
+      <label>Service</label>
+      <select id="service" onchange="updateService()"></select>
+
+      <div class="service-info">
+        <div class="service-name" id="serviceName">TikTok Views</div>
+
+        <div class="service-meta">
+          <div>
+            <span>Rate</span>
+            <strong class="rate" id="serviceRate">$0.20 per 1000</strong>
+          </div>
+
+          <div>
+            <span>Min</span>
+            <strong id="serviceMin">100</strong>
+          </div>
+
+          <div>
+            <span>Max</span>
+            <strong id="serviceMax">100000</strong>
+          </div>
         </div>
 
-        <div class="stat">
-          <span class="stat-icon">📦</span>
-          <div class="stat-label">Total Orders</div>
-          <div class="stat-value" id="totalOrders">0</div>
+        <div style="margin-top:14px;color:#aebbd0;">
+          ℹ Service will be delivered according to provider speed.
         </div>
-
-        <div class="stat">
-          <span class="stat-icon">⚡</span>
-          <div class="stat-label">Active Orders</div>
-          <div class="stat-value" id="activeOrders">0</div>
-        </div>
-
-        <div class="stat">
-          <span class="stat-icon">🛍️</span>
-          <div class="stat-label">Services</div>
-          <div class="stat-value">100+</div>
-        </div>
-
       </div>
 
+      <label>Link</label>
+      <input id="link" type="url" placeholder="Enter your post/profile link">
 
-      <div class="grid">
+      <label>Quantity</label>
+      <input id="quantity" type="number" placeholder="Example: 1000" oninput="calculateCharge()">
 
-        <div class="panel">
-
-          <h2>Quick New Order</h2>
-
-          <label>Category</label>
-
-          <select id="category" onchange="updateService()">
-            <option>Instagram</option>
-            <option>TikTok</option>
-            <option>YouTube</option>
-            <option>Facebook</option>
-            <option>Telegram</option>
-          </select>
-
-          <label>Service</label>
-
-          <select id="service">
-            <option>Instagram Followers</option>
-            <option>Instagram Likes</option>
-            <option>Instagram Views</option>
-          </select>
-
-          <label>Link</label>
-
-          <input
-            id="link"
-            type="text"
-            placeholder="Enter your post/profile link"
-          >
-
-          <label>Quantity</label>
-
-          <input
-            id="quantity"
-            type="number"
-            placeholder="Example: 1000"
-          >
-
-          <div class="service-info">
-            Rate: <b>$0.50 / 1000</b><br>
-            Minimum: 100<br>
-            Maximum: 100000
-          </div>
-
-          <button class="order-btn" onclick="placeOrder()">
-            Place Order
-          </button>
-
-        </div>
-
-
-        <div>
-
-          <div class="panel">
-
-            <h2>Quick Access</h2>
-
-            <div class="quick">
-
-              <button onclick="showSection('neworder')">
-                🛒<br>New Order
-              </button>
-
-              <button onclick="showSection('orders')">
-                📦<br>My Orders
-              </button>
-
-              <button onclick="showSection('funds')">
-                💳<br>Add Funds
-              </button>
-
-              <button onclick="showSection('support')">
-                🎫<br>Support
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <div class="panel">
-
-            <h2>Account Information</h2>
-
-            <p style="color:#909ab9;line-height:1.8;">
-              Your account is active.<br>
-              Keep your login details secure.
-            </p>
-
-          </div>
-
-        </div>
-
+      <div class="charge">
+        <span>Charge</span>
+        <strong id="charge">$0.00</strong>
       </div>
 
-    </section>
+      <button class="order-btn" onclick="placeOrder()">
+        ➤ &nbsp; Place Order
+      </button>
 
+    </div>
 
-    <!-- NEW ORDER -->
+    <!-- RIGHT SIDE -->
+    <div>
 
-    <section id="neworder" style="display:none;">
+      <div class="box">
+        <div class="box-title">⚡ &nbsp; Quick Access</div>
 
-      <h1 class="page-title">New Order</h1>
-      <p class="subtitle">Create a new social media service order.</p>
-
-      <div class="panel">
-
-        <label>Category</label>
-
-        <select>
-          <option>Instagram</option>
-          <option>TikTok</option>
-          <option>YouTube</option>
-          <option>Facebook</option>
-          <option>Telegram</option>
-        </select>
-
-        <label>Service</label>
-
-        <select>
-          <option>Followers</option>
-          <option>Likes</option>
-          <option>Views</option>
-          <option>Comments</option>
-        </select>
-
-        <label>Link</label>
-
-        <input type="text" placeholder="Enter link">
-
-        <label>Quantity</label>
-
-        <input type="number" placeholder="Enter quantity">
-
-        <button class="order-btn" onclick="placeOrder()">
-          Place Order
+        <button class="quick-btn quick-blue" onclick="scrollToOrder()">
+          🛒 &nbsp; New Order &nbsp;&nbsp; ›
         </button>
 
-      </div>
-
-    </section>
-
-
-    <!-- ORDERS -->
-
-    <section id="orders" style="display:none;">
-
-      <h1 class="page-title">My Orders</h1>
-      <p class="subtitle">Track your recent orders.</p>
-
-      <div class="panel">
-
-        <div class="order-row">
-          <b>ID</b>
-          <b>Service</b>
-          <b>Amount</b>
-          <b>Status</b>
-        </div>
-
-        <div id="ordersList">
-
-          <div style="padding:25px 0;color:#8791b3;">
-            No orders yet.
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section id="services" style="display:none;">
-
-      <h1 class="page-title">Services</h1>
-      <p class="subtitle">Choose a service to place an order.</p>
-
-      <div class="panel">
-
-        <div class="service">
-          <div>
-            <div class="service-name">Instagram Followers</div>
-            <div class="service-meta">$0.50 / 1000</div>
-          </div>
-          <button onclick="showSection('neworder')">Order</button>
-        </div>
-
-        <div class="service">
-          <div>
-            <div class="service-name">Instagram Likes</div>
-            <div class="service-meta">$0.30 / 1000</div>
-          </div>
-          <button onclick="showSection('neworder')">Order</button>
-        </div>
-
-        <div class="service">
-          <div>
-            <div class="service-name">TikTok Views</div>
-            <div class="service-meta">$0.20 / 1000</div>
-          </div>
-          <button onclick="showSection('neworder')">Order</button>
-        </div>
-
-        <div class="service">
-          <div>
-            <div class="service-name">YouTube Views</div>
-            <div class="service-meta">$0.80 / 1000</div>
-          </div>
-          <button onclick="showSection('neworder')">Order</button>
-        </div>
-
-        <div class="service">
-          <div>
-            <div class="service-name">Facebook Followers</div>
-            <div class="service-meta">$0.60 / 1000</div>
-          </div>
-          <button onclick="showSection('neworder')">Order</button>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ADD FUNDS -->
-
-    <section id="funds" style="display:none;">
-
-      <h1 class="page-title">Add Funds</h1>
-      <p class="subtitle">Add balance to your RAJA SMM account.</p>
-
-      <div class="panel">
-
-        <h2>Payment Methods</h2>
-
-        <div class="quick">
-
-          <button onclick="paymentMessage('JazzCash')">
-            💳<br>JazzCash
-          </button>
-
-          <button onclick="paymentMessage('EasyPaisa')">
-            💳<br>EasyPaisa
-          </button>
-
-        </div>
-
-        <div class="service-info" style="margin-top:20px;">
-          Payment gateway/backend abhi connect nahi hai.
-          Pehle UI complete kar rahe hain.
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SUPPORT -->
-
-    <section id="support" style="display:none;">
-
-      <h1 class="page-title">Support</h1>
-      <p class="subtitle">Need help? Contact RAJA SMM support.</p>
-
-      <div class="panel">
-
-        <label>Subject</label>
-        <input type="text" placeholder="Enter subject">
-
-        <label>Message</label>
-        <input type="text" placeholder="Describe your issue">
-
-        <button class="order-btn" onclick="alert('Support system backend next step mein connect hoga.')">
-          Submit Ticket
+        <button class="quick-btn quick-yellow" onclick="scrollToOrder()">
+          ▦ &nbsp; Services &nbsp;&nbsp; ›
         </button>
 
+        <button class="quick-btn quick-red">
+          ▣ &nbsp; My Orders &nbsp;&nbsp; ›
+        </button>
+
+        <button class="quick-btn quick-blue">
+          ▣ &nbsp; Add Funds &nbsp;&nbsp; ›
+        </button>
+
+        <button class="quick-btn" style="background:#102b4d;">
+          ♧ &nbsp; Support &nbsp;&nbsp; ›
+        </button>
       </div>
 
-    </section>
+      <div class="box">
+        <div class="box-title">👤 &nbsp; Account Info</div>
 
+        <div class="account-info">
+          <div class="account-row">
+            <span>Username</span>
+            <span id="username">raja_user</span>
+          </div>
 
-    <!-- SETTINGS -->
+          <div class="account-row">
+            <span>Email</span>
+            <span id="email">user@example.com</span>
+          </div>
 
-    <section id="settings" style="display:none;">
+          <div class="account-row">
+            <span>Status</span>
+            <span class="status">Active</span>
+          </div>
 
-      <h1 class="page-title">Settings</h1>
-      <p class="subtitle">Manage your account settings.</p>
+          <div class="account-row">
+            <span>Member Since</span>
+            <span>August 2026</span>
+          </div>
 
-      <div class="panel">
-
-        <label>Email</label>
-        <input id="accountEmail" type="email" readonly>
-
-        <label>Account Status</label>
-        <input value="Active" readonly>
-
+          <div class="account-row">
+            <span>Account Type</span>
+            <span>Standard</span>
+          </div>
+        </div>
       </div>
 
-    </section>
+    </div>
 
-  </main>
+  </section>
 
+  <section class="announcement">
+    <h3>📢 &nbsp; Announcement</h3>
+    <p>Welcome to RAJA SMM! Provide best quality services with secure & fast delivery.</p>
+  </section>
+
+  <footer class="footer">
+    © 2026 <strong>RAJA SMM</strong>. All Rights Reserved.
+  </footer>
+
+</main>
 </div>
-
 
 <script>
 
-/* LOGIN SESSION — ISKO PRESERVE KIYA GAYA HAI */
+/* SERVICE DATABASE */
+const services = {
 
-const session = localStorage.getItem("raja_smm_session");
-
-if(!session){
-  window.location.href = "index.html";
-}
-
-
-/* MENU */
-
-function toggleMenu(){
-
-  document.getElementById("sidebar")
-    .classList.toggle("show");
-
-}
-
-
-/* SECTION SWITCH */
-
-function showSection(id){
-
-  const sections = [
-    "dashboard",
-    "neworder",
-    "orders",
-    "services",
-    "funds",
-    "support",
-    "settings"
-  ];
-
-  sections.forEach(function(section){
-
-    const el = document.getElementById(section);
-
-    if(el){
-      el.style.display =
-        section === id ? "block" : "none";
+  tiktok:[
+    {
+      name:"TikTok Views",
+      rate:0.20,
+      min:100,
+      max:100000
+    },
+    {
+      name:"TikTok Followers",
+      rate:1.50,
+      min:100,
+      max:50000
+    },
+    {
+      name:"TikTok Likes",
+      rate:0.80,
+      min:100,
+      max:50000
     }
+  ],
+
+  instagram:[
+    {
+      name:"Instagram Followers",
+      rate:2.00,
+      min:100,
+      max:50000
+    },
+    {
+      name:"Instagram Likes",
+      rate:0.50,
+      min:100,
+      max:100000
+    },
+    {
+      name:"Instagram Views",
+      rate:0.30,
+      min:100,
+      max:100000
+    }
+  ],
+
+  youtube:[
+    {
+      name:"YouTube Views",
+      rate:1.20,
+      min:100,
+      max:100000
+    },
+    {
+      name:"YouTube Subscribers",
+      rate:5.00,
+      min:100,
+      max:10000
+    }
+  ],
+
+  facebook:[
+    {
+      name:"Facebook Followers",
+      rate:1.80,
+      min:100,
+      max:50000
+    },
+    {
+      name:"Facebook Likes",
+      rate:0.60,
+      min:100,
+      max:100000
+    }
+  ]
+};
+
+
+/* LOAD SERVICES */
+function loadServices(){
+
+  const category=document.getElementById("category").value;
+  const select=document.getElementById("service");
+
+  select.innerHTML="";
+
+  services[category].forEach((item,index)=>{
+
+    const option=document.createElement("option");
+
+    option.value=index;
+    option.textContent=item.name;
+
+    select.appendChild(option);
 
   });
+
+  updateService();
+}
+
+
+/* UPDATE SELECTED SERVICE */
+function updateService(){
+
+  const category=document.getElementById("category").value;
+  const index=document.getElementById("service").value;
+
+  const item=services[category][index];
+
+  if(!item)return;
+
+  document.getElementById("serviceName").textContent=item.name;
+
+  document.getElementById("serviceRate").textContent=
+    "$"+item.rate.toFixed(2)+" per 1000";
+
+  document.getElementById("serviceMin").textContent=item.min;
+
+  document.getElementById("serviceMax").textContent=item.max;
+
+  const quantity=document.getElementById("quantity").value;
+
+  if(quantity)calculateCharge();
+}
+
+
+/* RATE CALCULATION */
+function calculateCharge(){
+
+  const category=document.getElementById("category").value;
+  const index=document.getElementById("service").value;
+  const quantity=Number(document.getElementById("quantity").value);
+
+  const item=services[category][index];
+
+  if(!item || !quantity){
+
+    document.getElementById("charge").textContent="$0.00";
+    return;
+  }
+
+  const charge=(quantity/1000)*item.rate;
+
+  document.getElementById("charge").textContent=
+    "$"+charge.toFixed(2);
+}
+
+
+/* PLACE ORDER */
+function placeOrder(){
+
+  const category=document.getElementById("category").value;
+  const index=document.getElementById("service").value;
+  const item=services[category][index];
+
+  const link=document.getElementById("link").value.trim();
+  const quantity=Number(document.getElementById("quantity").value);
+
+  if(!link){
+    alert("Please enter your post/profile link.");
+    return;
+  }
+
+  if(!quantity || quantity<item.min || quantity>item.max){
+    alert("Quantity must be between "+item.min+" and "+item.max+".");
+    return;
+  }
+
+  const charge=(quantity/1000)*item.rate;
+
+  alert(
+    "Order details\\n\\n"+
+    "Service: "+item.name+"\\n"+
+    "Quantity: "+quantity+"\\n"+
+    "Charge: $"+charge.toFixed(2)+"\\n\\n"+
+    "Actual provider API will be connected in the next step."
+  );
+}
+
+
+/* SIDEBAR */
+function toggleSidebar(){
 
   document.getElementById("sidebar")
-    .classList.remove("show");
+    .classList.toggle("open");
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+}
 
+
+/* SCROLL TO ORDER */
+function scrollToOrder(){
+
+  document.getElementById("orderBox")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+  document.getElementById("sidebar")
+    .classList.remove("open");
 }
 
 
 /* LOGOUT */
-
 function logout(){
 
   localStorage.removeItem("raja_smm_session");
 
-  window.location.href = "index.html";
+  window.location.href="index.html";
+}
+
+
+/* SESSION */
+const session=localStorage.getItem("raja_smm_session");
+
+if(!session){
+
+  window.location.href="index.html";
+
+}else{
+
+  try{
+
+    const data=JSON.parse(session);
+
+    if(data.email){
+      document.getElementById("email").textContent=data.email;
+    }
+
+    if(data.user_metadata && data.user_metadata.username){
+      document.getElementById("username").textContent=
+        data.user_metadata.username;
+    }
+
+  }catch(e){}
 
 }
 
 
-/* ORDER DEMO */
-
-function placeOrder(){
-
-  const link = document.getElementById("link");
-
-  const quantity = document.getElementById("quantity");
-
-  if(link && !link.value.trim()){
-
-    alert("Please enter your link.");
-
-    return;
-  }
-
-  if(quantity && !quantity.value){
-
-    alert("Please enter quantity.");
-
-    return;
-  }
-
-  alert(
-    "Order form ready. API/backend connection next step mein connect hoga."
-  );
-
-}
-
-
-/* PAYMENT */
-
-function paymentMessage(method){
-
-  alert(
-    method +
-    " payment system next step mein connect hoga."
-  );
-
-}
-
-
-/* SERVICE */
-
-function updateService(){
-
-  const category =
-    document.getElementById("category").value;
-
-  const service =
-    document.getElementById("service");
-
-  if(category === "Instagram"){
-
-    service.innerHTML = `
-      <option>Instagram Followers</option>
-      <option>Instagram Likes</option>
-      <option>Instagram Views</option>
-    `;
-
-  }
-
-  else if(category === "TikTok"){
-
-    service.innerHTML = `
-      <option>TikTok Followers</option>
-      <option>TikTok Likes</option>
-      <option>TikTok Views</option>
-    `;
-
-  }
-
-  else if(category === "YouTube"){
-
-    service.innerHTML = `
-      <option>YouTube Subscribers</option>
-      <option>YouTube Views</option>
-      <option>YouTube Likes</option>
-    `;
-
-  }
-
-  else if(category === "Facebook"){
-
-    service.innerHTML = `
-      <option>Facebook Followers</option>
-      <option>Facebook Likes</option>
-    `;
-
-  }
-
-  else{
-
-    service.innerHTML = `
-      <option>Telegram Members</option>
-      <option>Telegram Views</option>
-    `;
-
-  }
-
-}
-
-
-/* ACCOUNT EMAIL */
-
-try{
-
-  const data = JSON.parse(session);
-
-  if(data && data.email){
-
-    document.getElementById("accountEmail")
-      .value = data.email;
-
-  }
-
-}catch(e){
-
-  console.log("Session data unavailable");
-
-}
+/* START */
+loadServices();
 
 </script>
 
