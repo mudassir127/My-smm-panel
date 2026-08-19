@@ -488,3 +488,6 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+.modal.show {
+  display: flex;
+}
